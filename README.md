@@ -32,7 +32,7 @@ Ao retornar do gráfico de paises, visualizar valor da bolha e "tirar" o mouse, 
 
 Foi adicionado opção para seleção de um país especifico. Esta funcionalidade visa facilitar a busca de algum país específico, principalmente quando são muitos paises e as taxas estão muito próximas, como é o caso da EUROPA.
 
-Ainda no gráfico de linhas com as informações dos países, foi adicionado uma leve "bolha" na para facilitar o posicionamento do mouse sobre no cruzamento da linha entre eixo X e Y facilitando a visualização do valor exato da taixa daquele ano.
+Ainda no gráfico de linhas com as informações dos países, foi adicionado um leve ponto para facilitar o posicionamento do mouse sobre no cruzamento da linha entre eixo X e Y facilitando a visualização do valor exato da taxa daquele ano. O ponto foi suavisado com o intuito de não atrapalhar a visualização do progresso da linha ao longo do tempo.
 
 
 
