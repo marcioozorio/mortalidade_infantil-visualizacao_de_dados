@@ -1,0 +1,23 @@
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 46px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin: 0.1em 0;
+  }
+  
+  dimple-custom-axis-label {
+    font-size: 12px;
+  }
+  
+  .dimple-custom-axis-label {
+    font-size: 12px;
+  }
+  
+  .a {
+    font-family, "sans-serif"
+  }
