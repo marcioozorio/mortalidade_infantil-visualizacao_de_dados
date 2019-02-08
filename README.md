@@ -2,11 +2,18 @@
 
 ## RESUMO
 
-O gráfico apresenta a taxa de mortalidade mundial de recém-nascidos entre os anos de 2000 a 2017, separados por continentes e seus respectivos países. Os dados foram disponibilizados pela OMS - Organização Mundial da Saúde. 
- 
-O eixo X exibe a quantidade de crianças mortas para cada 1000 vivas, no período de 0 a 27 dias do nascimento, onde podemos observar a grande diferença entre a taxa de mortalidade entre os diversos continentes. Fica evidente a diminuição da taxa de mortalidade em todo o mundo ao longo de 18 anos.
- 
-O gráfico de entrada possui uma animação exibindo a taxa por continente. Ao clicar na "bolha" do continente, é exibido um segundo gráfico com a taxa dos paises do continente selecionado, onde é possível uma interação destacando somente a linha do país escolhido.
+De maneira geral, os países com certeza realizaram grandes mudanças para diminuir sua taxa de mortalidade, pois é evidente a queda em todo o mundo ao longo de 18 anos. 
+
+Nota-se uma separação em três grupos: O continente Africano com a maior taxa de mortalidade, o Europeu com a menor e os demais continentes com uma taxa intermediária e cada vez mais próximas entre si.
+Apesar da queda observada, a diferença da taxa entre os diversos continentes ainda é muito grande. Os países do continente Europeu (2017), em sua sua grande maioria, tiveram a taxa inferior a 2,5 mortos por 1000 vivos, enquanto que no outro extremo, temos a África onde nenhum país teve taxa menor que 2,5.
+
+Houveram alguns países com grande variação, mas o um se destacou devido a grande alta na taxa de mortalidade infantil, foi a Venezuela. Estava com 4,9 em 2000 e terminou com 7.9 em 2017.
+
+A Ásia é o continente com a maior variação de todos os continentes. Há países como Paquistão, com taxa altíssima de 16 mortos por 1000 vivos e Afeganistão com taxa de 11,9 em 2017. No outro extremo temos o Japão com taxa abaixo de um: 0,2 mortos para cada 1000 vivos.
+
+Os países da Europa tem baixa taxa de mortalidade e são países com menor território e muitas vezes com poucos habitantes. Será que os países mais populosos têm maior dificuldade e por isso acabam tendo taxas de mortalidade maiores?
+
+Realmente, dentre os [seis países mais populosos em 2018](https://epocanegocios.globo.com/Mundo/noticia/2017/12/estes-serao-os-paises-mais-populosos-de-2018.html), há países como o Paquistão (6º mais populoso) com taxa de 16 mortos a cada 1000 vivos sendo a maior taxa registrada em 2017, a Índia (2°) com 10,5 e Indonésia (4º) com 4,4. Mas há países como Brasil (5º) com taxa de 2,5, os Estados Unidos (3º) com 1,6 e o país mais populoso do mundo com quase 1,4bi de habitantes teve a  impressionante taxa de 1,5 mortos para cada 1000 vivos.
   
   
 
@@ -217,5 +224,5 @@ No gráfico de dados, seria interessante pode selecionar o nome do país e desta
 - https://www.d3-graph-gallery.com/graph/basic_datamanipulation.html
 - https://c3js.org/samples/transition_duration.html
 - http://www.geografia.fflch.usp.br/publicacoes/Geousp/Geousp23/Artigo_Luiz_e_Silvio.pdf
-
+- https://davidwalsh.name/array-insert-index
 
