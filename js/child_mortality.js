@@ -1,6 +1,6 @@
       var playAnimation = true;
       var countryIndex = 0;
-      var continentSelected = "";
+      var continentSelected = '';
 
 
       /** Function to select a single country data */
@@ -8,11 +8,12 @@
         countryIndex = this.selectedIndex;
 
         if (this.selectedIndex != 0) {
-          graphCountry(continentSelected, this[this.selectedIndex].value)
+          graphCountry(continentSelected, this[this.selectedIndex].value);
         } else {
-          graphCountry(continentSelected, null)
+          graphCountry(continentSelected, null);
         }
       }
+
 
 
       /** 
@@ -20,7 +21,7 @@
        */       
       function graphContinent() {
 
-        continentSelected = "";
+        continentSelected = '';
         countryIndex = 0;
 
         d3.selectAll("h1#title")._groups[0][0].textContent = "Child Mortality - Rate of deaths by Continent";
@@ -29,12 +30,12 @@
         d3.select("svg2").remove();
         d3.select("foreignObject").remove();
 
+        d3.selectAll("div#resume").style("display", "block");
 
         var svg = dimple.newSvg("#chartContainer", 1000, 600);
 
         d3.csv("/data/MORT_200_final.csv", function(data) {
           var series,
-
             // Set a background and foreground chart
             charts = [
               new dimple.chart(svg, null),
@@ -67,13 +68,13 @@
             y.tickFormat = ".1f";
             y.overrideMax = 16;
             y.ticks = 10;
-            y.title = "Deaths per 1000 1000 live births (0-27 days)";
+            y.title = "Deaths per 1000 live births (0-27 days)";
 
             y.hidden = (i === 0);
             z = chart.addMeasureAxis("z", "Deaths per 1000");
             z.overrideMax = 16;
             z.tickFormat = ".1f";
-            z.title = "Deaths per 1000 1000 live births (0-27 days)";
+            z.title = "Deaths per 1000 live births (0-27 days)";
 
             // Ensure the same colors for every owner in both charts
             // differing by opacity
@@ -103,7 +104,6 @@
               var lastData = dimple.filterData(data, "Year", lastDate);
               // Add a series to the background chart to display old position
               var lastSeries = charts[0].addSeries(["Continent"], dimple.plot.bubble);
-              //var lastSeries = charts[0].addSeries(["Country", "Continent"], dimple.plot.bubble);
 
               // Average suits these measures better
               lastSeries.aggregate = dimple.aggregateMethod.avg;
@@ -190,7 +190,7 @@
 
 
           // Add the primary series to the main chart
-          series = charts[1].addSeries(["Continent"], dimple.plot.bubble)
+          series = charts[1].addSeries(["Continent"], dimple.plot.bubble);
 
           series.aggregate = dimple.aggregateMethod.avg;
 
@@ -306,7 +306,6 @@
             .attr("id", "legend_text")
             .attr("x", myLegend.x + 95)
             .attr("y", myLegend.y - 12)
-            //.attr("y", function (d, i) { return 90 + i * 14; })
             .style("font-family", "sans-serif")
             .style("font-size", "10px")
             .style("color", "Black")
@@ -322,29 +321,22 @@
             // Add a click event to each rectangle
             .on("click", function(e) {
 
-
-
               if (playAnimation == false) {
 
-                var vdimple = "circle." + this.classList[2];;
+                var vdimple = 'circle.' + this.classList[2];
 
                 if (d3.selectAll(vdimple).style("display") != "none") {
-                  //if (d3.selectAll(vdimple).style("opacity") > 0){ 	          		
                   d3.select(this).style("opacity", 0.2);
 
                   d3.selectAll(vdimple)
                     .transition()
                     .duration(800)
-                    //.style("opacity", "0");
                     .style("display", "none");
-                  //.attr("opacity", "0");
                 } else {
                   d3.selectAll(vdimple)
                     .transition()
                     .duration(800)
                     .style("display", "inline");
-                  //.style("opacity", "0.3");
-                  //.attr("opacity", "0");
 
                   d3.select(this).style("opacity", 1);
                 }
@@ -355,6 +347,8 @@
             });
 
         });
+
+        d3.selectAll("div#footer").style("display", "block");      
       }
 
 
@@ -373,6 +367,8 @@
         d3.selectAll("h1#title")._groups[0][0].textContent = "Child Mortality - Rate of deaths (Continent:" + vcontinent + ")";
 
         d3.select("svg").remove();
+        d3.selectAll("div#resume").style("display", "none");
+        d3.selectAll("div#footer").style("display", "none");
 
         var svg = dimple.newSvg("#chartContainer", 1000, 600);
 
@@ -424,14 +420,14 @@
           y.tickFormat = ".1f";
           y.overrideMax = 20;
           y.ticks = 10;
-          y.title = "Deaths per 1000 1000 live births (0-27 days)";
+          y.title = "Deaths per 1000 live births (0-27 days)";
 
 
           z = charts[1].addMeasureAxis("z", "Deaths per 1000");
           z.overrideMax = 20;
 
 
-          series = charts[1].addSeries(["Year", "Country"], dimple.plot.line, [x, y])
+          series = charts[1].addSeries(["Year", "Country"], dimple.plot.line, [x, y]);
 
           series.x.fontSize = "12px";
           series.y.fontSize = "12px";
@@ -460,8 +456,6 @@
 
             svg.selectAll(".dimple-hover-text")
               .data([vcountry])
-              //.data([e.xValue, (e.yValue)])
-              //.data([e.xValue, d3.format(",.f")(e.yValue)])                  
               .enter()
               .append("text")
               .attr("class", "dimple-hover-text")
@@ -500,11 +494,7 @@
               d3.selectAll(".dimple-line").style("opacity", 0.3);
               d3.select(this).style("opacity", 1);
               d3.select(this).style("stroke-width", 3);
-
-              //d3.selectAll("circle").style("stroke-width", 1);
-              //d3.selectAll("circle").attr("r", 2);
               d3.selectAll("circle").style("opacity", 0);
-              //d3.selectAll("circle").style("fill-opacity", .7);                        
 
               svg.selectAll(".dimple-hover-text")
                 .data([e.data[0].aggField[1]])
@@ -546,7 +536,6 @@
             if (this.classList.contains("dimple-line") == true) {
               d3.selectAll(".dimple-line").style("opacity", 1);
               d3.select(this).style("stroke-width", 2)
-                //.style("cursor", "crosshair")
             }
             svg.selectAll(".dimple-hover-text").remove();
 
@@ -576,7 +565,7 @@
           foreignObject.setAttribute('width', 300);
 
           var div = document.createElement('div');
-          div.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:graphContinent();">Return to Continent Graph</a>';
+          div.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:location.reload();">Return to Continent Graph</a>';
 
           foreignObject.appendChild(div);
           svg2.appendChild(foreignObject); //svg is an already created svg element containing a d3 chart
@@ -592,7 +581,6 @@
           var select = d3.select('svg')
             .append('select')
             .attr('class', 'select');
-          //.on('change',onchangeselect);
 
           var options = select
             .selectAll('option')
